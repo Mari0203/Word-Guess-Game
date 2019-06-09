@@ -11,10 +11,40 @@
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
+  <!-- Bootstrap CDN --->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 
 <body>
-
+<header>
+  <h1>Word Guess Game</h1>
+</header>
+<div class="container">
+  <div class="row">
+    <span><h2>Press any key to get started!</h2></span>
+  </div>
+  <div class="col-md-6" id="Wins">
+    Wins:
+  </div>
+  <div class="col-md-6" id="winValue">
+    0
+  </div>
+  <div class="row">
+    <div class="col-md-12" id="wordDisplayPanel"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      Number of Guesses Remaining:
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      Letters Already Guessed:
+    </div>
+    <div class="col-md-6" id="lettersGuessed"></div>
+      </div>
+</div>
 
   <!-- Footer -->
   <footer>
