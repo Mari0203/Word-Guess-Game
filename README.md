@@ -9,18 +9,18 @@
     * "Press any key to get started!"
     * "Wins:  "  (i.e. # of times that teh user guessed the word correctly)
         - [ ] If the word is madonna, for example, display it like below when the game starts:
-          ```
-          - - - - - - -
-          ```
+            ```
+            - - - - - - -
+            ```
         - [ ] As the user guesses the correct letters, reveal them like below example:
-        ```
-        m a d o _ _ a
-        ```
+            ```
+            m a d o _ _ a
+            ```
     * "Number of Guesses Remaining:  " (i.e. # of guesses remaining for the user)
     * "Letters Already Guessed:  " (i.e. Letters that the suer has guesssed, displayed like below):
-    ```
-    L Z A E
-    ```
+             ```
+             L Z A E
+             ```
 
 4. After the user wins/loses, the game shoudl automatically choose another word, and repeat the game.
 
