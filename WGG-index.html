@@ -14,6 +14,10 @@
   <!-- Bootstrap CDN --->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Oldenburg&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Frijole&display=swap" rel="stylesheet">
+
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
@@ -36,7 +40,7 @@
     <div class="row">
       <div class="col-sm-7">
         <p>
-          <h3>How to Play:</h3>
+          <h4>How to Play:</h4>
           <hr>
           <ul>
             <li>A name of a place around the world will be chosen by the computer.</li>
@@ -46,31 +50,52 @@
             <li>Press any key to get started!</li>
           </ul>
         </p>
-        <hr>
+        <br>
+
         <!-- Word Display Panel -->
         <div class="card text-center">
-          <h5 class="card-header">
-            The Word
-          </h5>
-          <div class="card-body" id="wordDisplay">
-          </div>
+          <h5 class="card-header" style="background-color: rgb(9, 133, 216);">The Word</h5>
+          <div class="card-body" id="wordDisplay"></div>
         </div>
+        <br>
+        <!-- Display: Used Letters -->
+        <div class="card text-center">
+          <h5 class="card-header" style="background-color: rgb(9, 133, 216);">Letters Used</h5>
+          <div class="card-body" id="usedLetters"></div>
+        </div>
+        <br>
+        <!-- Display: # of Wins -->
+        <div class="card text-center">
+          <h5 class="card-header" style="background-color: rgb(9, 133, 216);">
+            <i class="fa fa-star-o"></i>  Wins  <i class="fa fa-star-o"></i></h5>
+          <div class="card-body" id="winNumbers"></div>
+        </div>
+        <br>
+        <!-- Display: # of Guesses Remaining -->
+        <div class="card text-center">
+          <h5 class="card-header" style="background-color: rgb(9, 133, 216);"># of Tries Remaining</h5>
+          <div class="card-body" id="tryNumbers"></div>
+        </div>
+        <br>
+
+
+
 
       </div>
-      
+
       <!-- Card with Image and quotes -->
       <div class="col-sm-5">
         <div class="card">
           <img src="assets/images/DrSeuss_Great_Places.jpg" class="img-fluid" alt="DrSeuss_Great_Places">
           <div class="card-body">
-            <div class="card-text">
-              <p>
+            <div class="card-text" id="quotes">
+              <p><br>
                 "You have brains in your head.<br>
                 You have feet in your shoes.<br>
                 You can steer yourself<br>
                 any direction you choose.<br>
                 You're on your own. And you know what you know.<br>
-                And YOU are the guy who'll decide where to go..."<br>
+                And YOU are the guy who'll decide where to go..."<br><br>
               </p>
             </div>
             <button type="button" class="btn btn-primary">Let's go!</button>
