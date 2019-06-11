@@ -17,8 +17,11 @@ var placeList = [
     "Korea"
 ];
 
-// Set # of tries to a variable
+// Set # of player's tries to a variable
 var tryNums = 0;
+
+// Store the computer selected word in a variable:
+var word = "";
 
 // Pick a random word from the placeList array.
 var word = placeList[Math.floor(Math.random() * placeList.length)];
@@ -32,6 +35,19 @@ for (var i = 0; i < word.length; i++) {
 };
 console.log("The chosen word underscored: " + answerArray);
 
+// Store the # of letters in the selected word:
+var 
+
 // Keep track of remaining unanswered letters by setting it to a variable.
 // var unansweredLetters = # of underscores remaining in a word
+
+/****************** STARTS THE GAME *********************/
+// Call the function that starts the game.
+startGame();
+
+// Run the function that starts when any key is clicked.
+document.onkeyup = function(event) {
+
+    //
+}
 
