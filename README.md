@@ -1,9 +1,11 @@
-# HWK 3: Word Guess Game
-(Using Hangman's Game logics)
+# HW3: Word Guess Game
 
-## Instructions
+## The Game Overview
+This game uses the Hangman's Game logic, to have the player guess the hidden word by selecting one letter at a time to check if that letter is in the word.  It uses only vanilla JavaScripts (i.e. no jQuery) along with HTML, CSS and Bootstrap for structure and styling.
 
-1. Choose a theme for your game! You can  choose any subject for your theme, though, so be creative!
+## App Requirements
+
+1. Choose any subject for your theme.
 2. Use key events to listen for the letters that your players will type.'
 3. Display the following on the page: 
     * "Press any key to get started!"

@@ -51,8 +51,6 @@ function startGame() {
 
 };
 
-// Start the game when the player clicks the "Let's Go!" button:
-
 // Run the function that starts when any key is clicked.
 document.onkeyup = function(event) {
 
