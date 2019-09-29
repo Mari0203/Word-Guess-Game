@@ -1,23 +1,33 @@
 // Create an array of places/cities.
-var placeList = [
-  "Paris",
-  "London",
-  "Istanbul",
-  "Casablanca",
-  "Tokyo",
-  "Hawaii",
-  "India",
-  "Moscow",
-  "Hollywood",
-  "Egypt",
-  "Sydney",
-  "Ireland",
-  "Thai",
-  "Shanghai",
-  "Korea"
+var capitals = [
+  "beijing",
+  "tokyo",
+  "manila",
+  "moscow",
+  "cairo",
+  "jakarta",
+  "kinshasa",
+  "seoul",
+  "dhaka",
+  "tehran",
+  "london",
+  "lima",
+  "bangkok",
+  "bogota",
+  "hanoi",
+  "baghdad",
+  "singapore",
+  "ankara",
+  "santiago",
+  "riyadh",
+  "berlin",
+  "damascus",
+  "algiers",
+  "madrid",
+  "pyongyang"
 ];
 
-// ====== Global Variables ===== //
+// ================= GLOBAL VARIABLES ================== //
 // Set # of player's tries to a variable.  Max try is 10.
 var tryNums = 0;
 
@@ -31,11 +41,11 @@ var letterCount = 0;
 //// var unansweredLetters = # of underscores remaining in a word
 var unansweredLetters = [];
 
-/****************** STARTS THE GAME *********************/
+// ================= FUNCTIONS ======================== //
 function startGame() {
   
   // Pick a random word from the placeList array.
-  var word = placeList[Math.floor(Math.random() * placeList.length)];
+  var word = capitals[Math.floor(Math.random() * capitals.length)];
   console.log("Randomly selected place: " + word);
 
   /* Create an empty array to store answer letters,
@@ -51,6 +61,7 @@ function startGame() {
 
 };
 
+// ================= START THE GAME ======================== //
 // Run the function that starts when any key is clicked.
 document.onkeyup = function(event) {
 

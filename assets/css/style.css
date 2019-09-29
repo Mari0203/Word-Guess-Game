@@ -1,8 +1,12 @@
 #title-banner {
-    font-family: 'Frijole', cursive;
-    color: rgb(219, 185, 13);
     background-image: url("../images/cloud_banner.jpg");
-    background-size: cover;
+    background-size: 100% 100%;
+}
+
+#title {
+    font-family: 'Frijole', cursive;
+    color: rgb(219, 181, 13);
+    text-shadow: -2px -2px 0 rgb(41, 40, 40);
 }
 
 #main {
@@ -17,4 +21,18 @@
 .card-header {
     /* font-family: 'Oldenburg', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     color: white;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oldenburg', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url("../images/cloud_banner.jpg");
+    background-size: 100%;
+    color: whitesmoke;
+    text-shadow: -2px -2px 0 rgb(41, 40, 40);
+    padding: 15px 50px 15px 50px;
 }
