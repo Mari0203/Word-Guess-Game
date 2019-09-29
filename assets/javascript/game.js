@@ -79,7 +79,7 @@ function startGame() {
   console.log("The selected word underscored: " + answerArray);
 
   // Reset values for each new round of the game
-  guessesLeft = 5;
+  guessesLeft = 10;
   wrongLetters = [];
   letterAndUnderscores = [];
 

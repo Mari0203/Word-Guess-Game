@@ -1,35 +1,45 @@
-# HW3: Word Guess Game
+# Word Guess Game
+Web app game made with JavaScript leveraging HTML DOM methods for user inteaction handling.
 
-## The Game Overview
-This game uses the Hangman's Game logic, to have the player guess the hidden word by selecting one letter at a time to check if that letter is in the word.  It uses only vanilla JavaScripts (i.e. no jQuery) along with HTML, CSS and Bootstrap for structure and styling.
+## App Overview
+The game uses the Hangman's Game logic--to have the player guess the hidden, randomly selected word by guessing one letter at a time.  The player loses the game when the number of incorrectly guessed letters exceeds 10.  The player wins the game when all letters in the word are guessed correctly before exceeding the allowed guess tries.
 
-## App Requirements
+The app tracks the letters user has guessed successfully as well as incorrectly in order to update the number of guess tries user is allowed before losing the game round.  
 
-1. Choose any subject for your theme.
-2. Use key events to listen for the letters that your players will type.'
-3. Display the following on the page: 
-    * "Press any key to get started!"
-    * "Wins:  "  (i.e. # of times that teh user guessed the word correctly)
-        - [ ] If the word is madonna, for example, display it like below when the game starts:
+## App Functionality
+
+1. Player can start the game by clicking any key, or by licking on the "Let's Go" button below the image quotes.
+2. A word--a name of the national capital is randomly selected at the start of the game from the array consisting of top 25 national capitals in the world by population.  (This list excludes non-single-word capitals.)
+3. Key events are used to capture the letters that the player clicks for each guess.
+4. The app keeps track of letters used--both guesses successefully and incorrectly--and updates the win/loss scores along with the list of used letters in the U/I display: 
+    
+        - [ ] If the randomly selected word is Berlin, for example, the app will display it like below when the game starts:
             ```
-            - - - - - - -
+            _ _ _ _ _ _
             ```
-        - [ ] As the user guesses the correct letters, reveal them like below example:
+        - [ ] As the user guesses the correct letters, the app reveals them like below example:
             ```
-            m a d o _ _ a
+            b _ r l _ n
             ```
-    * "Number of Guesses Remaining:  " (i.e. # of guesses remaining for the user)
-    * "Letters Already Guessed:  " (i.e. Letters that the suer has guesssed, displayed like below):
+    * "Wins" --  # of times that the player has guessed the selected word correctly.
+    * "Losses" -- # of times the player has failed to guess the letter correctly.
+    * "Number of Guesses Remaining" -- # of allowed guesses remaining for the current game round.
+    * "Wrong Letters Used" -- Incorrectly guessed letters that the player has used already for the round, displayed like below:
              ```
              L Z A E
              ```
 
-4. After the user wins/loses, the game shoudl automatically choose another word, and repeat the game.
+5. After the player wins/loses, the game automatically chooses another word, and repeat the game.
 
-## Bonus Challenges
-1. Play a sound or song when the user guesses their word correctly, like in our demo.
-2. Write some stylish CSS rules to make a design that fits your game's theme.
-3. **HARD MODE:** Organize your game code as an object, except for the key events to get the letter guessed. This will be a challenge if you haven't coded with JavaScript before, but we encourage anyone already familiar with the language to try this out.
-4.  Save your whole game and its properties in an object.
-5.  Save any of your game's functions as methods, and call them underneath your object declaration using event listeners.
-6.  Don't forget to place your global variables and functions above your object. (Remember: global variables, then objects, then calls.)
+## Technology Used
+
+   * HTML
+   * CSS
+   * Bootstrap
+   * JavaScript
+   * HTML DOM methods
+
+---
+
+By Mari &copy; 2019
+with :v:  &  :green_heart:
