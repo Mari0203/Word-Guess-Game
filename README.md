@@ -13,21 +13,21 @@ The app tracks the letters user has guessed successfully as well as incorrectly 
 3. Key events are used to capture the letters that the player clicks for each guess.
 4. The app keeps track of letters used--both guesses successefully and incorrectly--and updates the win/loss scores along with the list of used letters in the U/I display: 
     
-        - [ ] If the randomly selected word is Berlin, for example, the app will display it like below when the game starts:
-            ```
+    * If the randomly selected word is Berlin, for example, the app will display it like below when the game starts:
+    ```
             _ _ _ _ _ _
-            ```
-        - [ ] As the user guesses the correct letters, the app reveals them like below example:
-            ```
+    ```
+    * As the user guesses the correct letters, the app reveals them like below example:
+    ```
             b _ r l _ n
-            ```
+    ```
     * "Wins" --  # of times that the player has guessed the selected word correctly.
     * "Losses" -- # of times the player has failed to guess the letter correctly.
     * "Number of Guesses Remaining" -- # of allowed guesses remaining for the current game round.
     * "Wrong Letters Used" -- Incorrectly guessed letters that the player has used already for the round, displayed like below:
-             ```
-             L Z A E
-             ```
+    ```
+            L Z X P
+    ```
 
 5. After the player wins/loses, the game automatically chooses another word, and repeat the game.
 

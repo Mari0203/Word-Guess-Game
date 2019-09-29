@@ -2,31 +2,31 @@
 // ====================================================================
 // Create an array of places/cities.
 var capitals = [
-  "beijing",
-  "tokyo",
-  "manila",
-  "moscow",
-  "cairo",
-  "jakarta",
-  "kinshasa",
-  "seoul",
-  "dhaka",
-  "tehran",
-  "london",
-  "lima",
-  "bangkok",
-  "bogota",
-  "hanoi",
-  "baghdad",
-  "singapore",
-  "ankara",
-  "santiago",
-  "riyadh",
-  "berlin",
-  "damascus",
-  "algiers",
-  "madrid",
-  "pyongyang"
+  "BEIJING", 
+  "TOKYO",
+  "MANILA",
+  "MOSCOW",
+  "CAIRO",
+  "JAKARTA",
+  "KINSHASA",
+  "SEOUL",
+  "DHAKA",
+  "TEHRAN",
+  "LONDON",
+  "LIMA",
+  "BANGKOK",
+  "BOGOTA",
+  "HANOI",
+  "BAGHDAD",
+  "SINGAPORE",
+  "ANKARA",
+  "SANTIAGO",
+  "RIYADH",
+  "BERLIN",
+  "DAMASCUS",
+  "ALGIERS",
+  "MADRID",
+  "PYONGYANG"
 ];
 
 // Store the computer selected word in a variable:
@@ -71,17 +71,17 @@ function startGame() {
   letterCount = lettersInWord.length;
   console.log("# of letters in the selected word: ", letterCount);
 
-  // Fill the answerArray with both successfully guessed letter AND underscores (for yet-to-be guessed letters)
-  for (var i = 0; i < letterCount; i++) {
-    answerArray[i] = " _ ";
-    // answerArray.push(" _ ");
-  }
-  console.log("The selected word underscored: " + answerArray);
-
-  // Reset values for each new round of the game
+  // Reset below values for each new round of the game
   guessesLeft = 10;
   wrongLetters = [];
-  letterAndUnderscores = [];
+  answerArray = [];
+  
+  // Fill the answerArray with both successfully guessed letter AND underscores (for yet-to-be guessed letters)
+  for (var i = 0; i < letterCount; i++) {
+    // answerArray[i] = " _ ";
+    answerArray.push(" _ ");
+  }
+  console.log("The selected word underscored: " + answerArray);
 
   // Display answerArray with underscores in the 'wordDisplay' field on a page
   // Use .join() to omit commas between each underscores/letters
@@ -99,12 +99,13 @@ function startGame() {
 
 function checkLetters(letter) {
   // Check if guessed letter exists in the chosen word at all
+  console.log("What is 'letter'? ", letter);
   var letterExists = false;
 
   for (var i = 0; i < letterCount; i++) {
     if (word[i] == letter) {
       letterExists = true;
-      alert("Yes, the letter found!");
+      alert("Yes, the letter is found!");
     }
   }
   // Check where in the word the letter exists, then output updated answerArray.
@@ -115,7 +116,8 @@ function checkLetters(letter) {
       }
     }
   }
-  // Letter was NOT found in the word
+  // Letter was NOT found in the word, display the wrong letter,
+  // and decrement the # of Remaining Guesses by one.
   else {
     wrongLetters.push(letter);
     guessesLeft--;
@@ -136,7 +138,7 @@ function gameRoundComplete() {
     winCount++;
     alert("You Won!");
     
-    // Update the win score:
+    // And update the win score:
     document.getElementById("winCounter").innerHTML = winCount;
     startGame();
   }
@@ -145,7 +147,7 @@ function gameRoundComplete() {
     lossCount++;
     alert("You Lost...");
 
-    // Update the loss score:
+    // and update the loss score:
     document.getElementById("lossCounter").innerHTML = lossCount;
     startGame();
   }
@@ -157,10 +159,11 @@ function gameRoundComplete() {
 
 // Run the function that starts when any key is clicked.
 document.onkeyup = function(event) {
-  // Convert letter key pressed into all lower case
-  var letterClicked = String.fromCharCode(event.keyCode).toLowerCase();
+  // Convert letter key pressed into all upper case
+  var letterClicked = String.fromCharCode(event.keyCode).toUpperCase();
     console.log("A letter clicked: ", letterClicked);
 
+  // startGame();
   checkLetters(letterClicked);
   gameRoundComplete();
 };
