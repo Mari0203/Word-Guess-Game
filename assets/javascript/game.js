@@ -89,7 +89,7 @@ function startGame() {
 
   // Display the # of Guess Tries Remaining
   document.getElementById("guessNumber").innerHTML = guessesLeft;
-
+ 
   // Display the # of Wins
   document.getElementById("winCounter").innerHTML = winCount;
 
