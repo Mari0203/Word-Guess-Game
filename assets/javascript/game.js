@@ -32,7 +32,7 @@ var capitals = [
 // Store the computer selected word in a variable:
 var word = "";
 
-// Store the # of letters in the selected word:
+// Store the # of letters in the selected word: 
 var letterCount = 0;
 
 // Letters used in the chosen word
@@ -48,7 +48,7 @@ var answerArray = [];
 // Wrong-guess letters:
 var wrongLetters = [];
 
-// Set # of player's tries to a variable.  Max try is 5.
+// Set # of player's tries to a variable.  Max try is 10.
 var guessesLeft = 0;
 
 // # of Wins
@@ -59,6 +59,16 @@ var lossCount = 0;
 
 // FUNCTIONS
 // ====================================================================
+
+function reset() {
+    // Reset below values for each new round of the game
+    guessesLeft = 10;
+    wrongLetters = [];
+    answerArray = [];
+  
+    // document.getElementById("wordDisplay").style.clear = "red";
+    // document.getElementById("wordDisplay").style.clear = "2rem";
+};
 
 function startGame() {
   // Pick a random word from the capitals array.
@@ -71,11 +81,10 @@ function startGame() {
   letterCount = lettersInWord.length;
   console.log("# of letters in the selected word: ", letterCount);
 
-  // Reset below values for each new round of the game
-  guessesLeft = 10;
-  wrongLetters = [];
-  answerArray = [];
-  
+  reset();
+
+  // unansweredLetters =   
+
   // Fill the answerArray with both successfully guessed letter AND underscores (for yet-to-be guessed letters)
   for (var i = 0; i < letterCount; i++) {
     // answerArray[i] = " _ ";
@@ -99,7 +108,6 @@ function startGame() {
 
 function checkLetters(letter) {
   // Check if guessed letter exists in the chosen word at all
-  console.log("What is 'letter'? ", letter);
   var letterExists = false;
 
   for (var i = 0; i < letterCount; i++) {
@@ -136,11 +144,19 @@ function gameRoundComplete() {
   // Check if the user has won the game
   if (lettersInWord.toString() == answerArray.toString()) {
     winCount++;
-    alert("You Won!");
-    
-    // And update the win score:
+    alert("====== You Won! ======");
+
+    // Update the styling for the wordDisplay
+    document.getElementById("wordDisplay").style.color = "red";
+    document.getElementById("wordDisplay").style.fontSize = "2rem";
+      
+    // And update the win score and styling:
     document.getElementById("winCounter").innerHTML = winCount;
-    startGame();
+    document.getElementById("winCounter").style.color = "red";
+    document.getElementById("winCounter").style.fontSize = "2rem";
+
+    // Wait for 3 seconds then execute reset() function for the new round
+    // setTimeout(reset, 3000);
   }
   // Check if the user has lost the game
   else if (guessesLeft == 0) {
@@ -149,9 +165,9 @@ function gameRoundComplete() {
 
     // and update the loss score:
     document.getElementById("lossCounter").innerHTML = lossCount;
-    startGame();
-  }
 
+    // setTimeout(reset, 3000);
+  }
 };
 
 // PROCESSES -- START THE GAME
@@ -162,8 +178,10 @@ document.onkeyup = function(event) {
   // Convert letter key pressed into all upper case
   var letterClicked = String.fromCharCode(event.keyCode).toUpperCase();
     console.log("A letter clicked: ", letterClicked);
-
-  // startGame();
-  checkLetters(letterClicked);
-  gameRoundComplete();
+    
+    // startGame();
+  // while (! lettersInWord.toString() == answerArray.toString()) {
+    checkLetters(letterClicked);
+    gameRoundComplete();
+  // }
 };

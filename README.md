@@ -29,7 +29,9 @@ The app tracks the letters user has guessed successfully as well as incorrectly 
             L Z X P
     ```
 
-5. After the player wins/loses, the game automatically chooses another word, and repeat the game.
+5. When the player wins, it triggers the alert message and styling change to the fully spelled word display and the updated Win# to make them stand out.
+6. After the player wins/loses, the new round starts with any key click, automatically chooses another randomly selected word while keeping the win/loss scores intact.
+7. Player can clear all scores and re-start the game fresh by reloading the page.
 
 ## Technology Used
 
