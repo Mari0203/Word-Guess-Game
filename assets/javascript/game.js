@@ -57,6 +57,9 @@ var winCount = 0;
 // # of Losses
 var lossCount = 0;
 
+// # of total game rounds
+var totalRound = 0;
+
 // FUNCTIONS
 // ====================================================================
 
@@ -64,10 +67,16 @@ function reset() {
     // Reset below values for each new round of the game
     guessesLeft = 10;
     wrongLetters = [];
+    document.getElementById("wrongLetterUsed").innerHTML = wrongLetters.join(" ");
     answerArray = [];
   
-    // document.getElementById("wordDisplay").style.clear = "red";
-    // document.getElementById("wordDisplay").style.clear = "2rem";
+    // Reset the styling for the wordDisplay
+    document.getElementById("wordDisplay").style.color = "black";
+    document.getElementById("wordDisplay").style.fontSize = "1rem";
+      
+    // Reset the win score and styling:
+    document.getElementById("winCounter").style.color = "black";
+    document.getElementById("winCounter").style.fontSize = "1rem";
 };
 
 function startGame() {
@@ -133,7 +142,7 @@ function checkLetters(letter) {
   console.log("Updated answerArray: ", answerArray);
 };
 
-function gameRoundComplete() {
+function gameRoundUpdate() {
   console.log("Win Count: " + winCount, "| Loss Count: " + lossCount, "| Guesses Remaining: " + guessesLeft);
 
   // Update the HTML to reflect the score updates:
@@ -154,9 +163,6 @@ function gameRoundComplete() {
     document.getElementById("winCounter").innerHTML = winCount;
     document.getElementById("winCounter").style.color = "red";
     document.getElementById("winCounter").style.fontSize = "2rem";
-
-    // Wait for 3 seconds then execute reset() function for the new round
-    // setTimeout(reset, 3000);
   }
   // Check if the user has lost the game
   else if (guessesLeft == 0) {
@@ -165,8 +171,6 @@ function gameRoundComplete() {
 
     // and update the loss score:
     document.getElementById("lossCounter").innerHTML = lossCount;
-
-    // setTimeout(reset, 3000);
   }
 };
 
@@ -178,10 +182,14 @@ document.onkeyup = function(event) {
   // Convert letter key pressed into all upper case
   var letterClicked = String.fromCharCode(event.keyCode).toUpperCase();
     console.log("A letter clicked: ", letterClicked);
-    
-    // startGame();
-  // while (! lettersInWord.toString() == answerArray.toString()) {
-    checkLetters(letterClicked);
-    gameRoundComplete();
-  // }
+
+    if (totalRound < winCount + lossCount) {
+      startGame();
+      totalRound++;
+      console.log("totalRound: ", totalRound);
+    }
+    else {
+      checkLetters(letterClicked);
+      gameRoundUpdate();
+    }
 };
